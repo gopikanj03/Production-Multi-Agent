@@ -123,12 +123,13 @@ if st.button("Submit Order"):
         try:
             with st.spinner("Parsing request and re-planning..."):
                 result = handle_user_request(prompt, priority_choice, st.session_state.orders, data["routing"], data["machines"], data["energy"])
-        except Exception:
+        except Exception as e:
             st.error(
                 "Something went wrong while processing this request. This can happen if the request is "
                 "ambiguous or doesn't map to a known product -- try rephrasing it (e.g. include a clear "
                 "product name, quantity, and timeframe)."
             )
+            st.caption(f"Technical detail: {type(e).__name__}: {e}")
             result = None
 
         if result is not None:
