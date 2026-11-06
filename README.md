@@ -127,10 +127,3 @@ Open the URL Streamlit prints (usually `http://localhost:8501`).
   they'd describe it to a colleague, and get back a detailed, grounded report instead
   of a raw spreadsheet.
 
-## Known limitations / possible next steps
-
-- The order book resets to the synthetic baseline when the app restarts (session-only
-  persistence).
-- Per-order sustainability/cost/speed preference (beyond the global default weighting)
-  was scoped out for now.
-- No automated test suite yet.
